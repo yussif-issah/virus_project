@@ -1,0 +1,10 @@
+.form-upload {
+    height: 350px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 2px dashed #3498db;
+}
+.button-bottom{
+    
+}
