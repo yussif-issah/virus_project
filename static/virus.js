@@ -21,8 +21,13 @@ function showFileNames(input) {
         }
         output.innerHTML = names.join('<br>');
     }
+
+    resultsDiv = document.getElementById("status")
+    resultsDiv.innerHTML = "Files Selected"
 }
 function handleConfirm(){
+    resultsDiv = document.getElementById("status")
+    resultsDiv.innerHTML = "Analyzing...."
     formData.append('option',selectedOption)
 
     fetch('/handleFilesSubmission', {
@@ -31,7 +36,7 @@ function handleConfirm(){
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.results)
+        resultsDiv.innerHTML = data.results
       
     });
 }
