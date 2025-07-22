@@ -21,7 +21,7 @@
             <div class="col-md-2 col-lg-2 col-sm-12">
                 <div class="row">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input onclick="handleOption(this)" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Phase 1
                         </label>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <input onclick="handleOption(this)" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Phase 2
                         </label>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <input onclick="handleOption(this)" value="3" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Phase 3
                         </label>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <input onclick="handleOption(this)" value="4" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Phase 4
                         </label>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <input onclick="handleOption(this)" value="5" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Phase 5
                         </label>
@@ -61,24 +61,35 @@
                 </div>
             </div>
             <div class="col-md-8 col-lg-8">
-                <div class="form-upload">
-                    <div class="">
-                        <div class="">
-                            <input type="file" multiple = "true" class="form-control-file" id="fileUpload" hidden>
-                            <button type="button" class="btn btn-lg btn-outline-primary" onclick="document.getElementById('fileUpload').click();">
+                <div class="row justify-content-center ">
+                    <div class="col-lg-10 col-md-10">
+                        <div class="form-upload">
+                            <input type="file" multiple  class="form-control-file" id="fileUpload" hidden onchange="showFileNames(this)">
+                            <button type="button"  class="btn btn-lg btn-outline-primary" onclick="document.getElementById('fileUpload').click();">
                                 <i class="fa fa-upload"></i>
                             </button>
+                        </div>
+                    </div>
+                    <div class=" card col-md-2 col-lg-2 ">
+                        <div>
+                            <div class="card-body">
+                                <h5 class="card-title">Selected Files</h5>
+                                <div id="file-names" class="mt-2 text-muted card-text"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-1 col-lg-1 col-sm-12">
-                <button class="btn btn-primary button-bottom">
+                <button onclick="handleConfirm()" class="btn btn-primary button-bottom">
                     Confirm
                 </button>
             </div>
         </div>
-
+        <div class="row justify-content-center mt-5">
+            <h5 class="text-secondary" id="results">Analyzing...</h5>
+        </div>
+        <script src="/static/virus.js" type="text/javascript"></script>
     </body>
 </html>
 
